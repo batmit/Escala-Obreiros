@@ -6,7 +6,6 @@ services:
     dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
     numInstances: 1
-    maxShutdownDelaySeconds: 60
     autoDeployTrigger: 'off'
     envVars:
       - key: HOST
