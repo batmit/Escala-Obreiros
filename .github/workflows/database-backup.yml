@@ -1,0 +1,40 @@
+name: PostgreSQL backup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: postgres-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    if: vars.ENABLE_DATABASE_BACKUP == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DATABASE_BACKUP_URL: ${{ secrets.DATABASE_BACKUP_URL }}
+      BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Instalar driver PostgreSQL
+        run: python -m pip install 'psycopg[binary]==3.2.13'
+      - name: Exportar snapshot consistente e cifrar
+        run: python -m backend.backup_job
+      - name: Armazenar somente o arquivo cifrado
+        uses: actions/upload-artifact@v6
+        with:
+          name: postgres-backup-${{ github.run_id }}
+          path: data/backup-job/snapshot.json.gz.gpg
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "culto-1",
+    "diaSemana": 1,
+    "titulo": "Culto",
+    "funcoes": [
+      "palavra"
+    ]
+  },
+  {
+    "id": "culto-2",
+    "diaSemana": 2,
+    "titulo": "Culto",
+    "funcoes": [
+      "louvor",
+      "palavra"
+    ]
+  },
+  {
+    "id": "culto-4",
+    "diaSemana": 4,
+    "titulo": "Culto",
+    "funcoes": [
+      "palavra"
+    ]
+  },
+  {
+    "id": "culto-6",
+    "diaSemana": 6,
+    "titulo": "Culto",
+    "funcoes": [
+      "louvor",
+      "palavra"
+    ]
+  },
+  {
+    "id": "culto-7",
+    "diaSemana": 7,
+    "titulo": "Culto · noite",
+    "funcoes": [
+      "louvor",
+      "palavra"
+    ]
+  }
+]

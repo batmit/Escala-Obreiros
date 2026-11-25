@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#bb1626"><title>Calendário | Escala de Obreiros</title>
+<link rel="icon" type="image/svg+xml" href="https://www.igrejacristamaranata.org.br/wp-content/uploads/2024/06/logo-icm.svg">
+<link rel="stylesheet" href="styles.css"><script src="calendar.js" defer></script><script src="api.js" defer></script>
+</head>
+<body>
+<header class="cabecalho">
+  <a class="marca" href="./" aria-label="Escala de Obreiros — início"><img class="logo-igreja" src="https://www.igrejacristamaranata.org.br/wp-content/uploads/2024/06/logo-icm.svg" alt="Igreja Cristã Maranata" width="180"></a>
+  <h1>Escala de Obreiros</h1>
+  <p class="localidade">Igreja Cristã Maranata · Mariana</p>
+</header>
+<main>
+<section class="intro" aria-label="Apresentação"><p>Acompanhe os próximos cultos e quem estará servindo em cada encontro.</p></section>
+<section class="calendar" aria-labelledby="titulo">
+<div class="toolbar"><div><p class="eyebrow">CALENDÁRIO DA IGREJA</p><h2 id="titulo">Próximos sete dias</h2></div><nav aria-label="Período do calendário"><button id="anterior" aria-label="Sete dias anteriores">←</button><button id="hoje">Hoje</button><button id="proxima" aria-label="Próximos sete dias">→</button></nav></div>
+<div id="calendario" class="grid" aria-label="Dias e cultos"></div>
+<p id="status" role="status" aria-live="polite"></p>
+<p id="sincronizacao" role="status" aria-live="polite">Conectando à escala salva…</p>
+</section>
+</main>
+</body></html>

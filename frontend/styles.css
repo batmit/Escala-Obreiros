@@ -1,0 +1,87 @@
+:root {
+  --vermelho-icm: #bb1626;
+  --vermelho-escuro: #941220;
+  --azul-escuro: #192a3d;
+  --texto: #3a4f66;
+  --texto-secundario: #5c6c7d;
+  --fundo: #f7f8fa;
+  --fundo-destaque: #fff5f5;
+  --borda: #e5e8ed;
+  --borda-destaque: #ead7da;
+  --branco: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; border-top: 4px solid var(--vermelho-icm); }
+.cabecalho { width: 100%; margin: 0 auto; padding: 36px 20px 0; text-align: center; }
+.marca { display: block; width: fit-content; max-width: 60%; margin: 0 auto 26px; }
+.logo-igreja { display: block; width: 180px; max-width: 100%; height: auto; }
+h1 { margin: 0 0 12px; font-size: clamp(24px, 2.5vw, 30px); font-weight: 400; color: var(--azul-escuro); }
+.localidade { margin: 0; font-size: 14px; color: var(--texto-secundario); }
+main { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 28px; }
+.intro { text-align: center; padding: 18px 0 30px; }
+.intro p { margin: 0; font-size: 14px; line-height: 1.7; }
+.calendar { border: 1px solid var(--borda); border-radius: 8px; background: var(--branco); overflow: hidden; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 24px 12px; }
+.eyebrow { margin: 0 0 8px; font-size: 10px; font-weight: 600; letter-spacing: 1.6px; color: var(--vermelho-icm); }
+h2 { margin: 0; font-size: 23px; font-weight: 400; color: var(--azul-escuro); }
+#periodo { margin: 10px 0 0; font-size: 13px; line-height: 1.6; color: var(--texto-secundario); }
+nav { display: flex; align-items: center; gap: 10px; }
+button { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 8px 15px; border: 1px solid #d7dee6; border-radius: 6px; background: transparent; color: var(--texto); font: inherit; font-size: 14px; cursor: pointer; }
+#anterior, #proxima { width: 44px; padding: 0; border-radius: 50%; font-size: 24px; }
+#hoje { color: var(--vermelho-icm); border-color: var(--borda-destaque); }
+button:hover { border-color: var(--vermelho-icm); color: var(--vermelho-icm); background: var(--fundo-destaque); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--vermelho-icm); outline-offset: 4px; }
+.note { color: var(--texto-secundario); font-size: 11px; margin: 12px 24px 24px; line-height: 1.6; }
+.grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; padding: 0 18px 24px; }
+.day { border: 1px solid var(--borda); border-radius: 6px; background: #fafbfc; padding: 16px 10px; min-height: 285px; }
+.day.today { border-color: var(--vermelho-icm); background: var(--fundo-destaque); }
+.day-head { padding-bottom: 16px; border-bottom: 1px solid var(--borda); margin-bottom: 16px; }
+.today .day-head { border-color: var(--borda-destaque); }
+.weekday { display: block; font-size: 12px; color: var(--texto); }
+.date-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 4px; }
+time { font-size: 36px; font-weight: 600; letter-spacing: -1px; font-variant-numeric: tabular-nums; color: var(--azul-escuro); }
+.today time { color: var(--vermelho-icm); }
+.badge { font-size: 9px; font-weight: 600; color: var(--branco); background: var(--vermelho-icm); padding: 4px 6px; border-radius: 4px; }
+.service { border: 1px solid var(--borda); background: var(--branco); border-radius: 6px; padding: 12px 9px; margin-top: 10px; }
+.service h3 { font-size: 12px; font-weight: 600; margin: 0 0 15px; color: var(--azul-escuro); }
+.role { font-size: 10px; font-weight: 600; color: var(--texto); margin: 12px 0 5px; }
+.person { font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; margin: 0; color: var(--azul-escuro); }
+.pending { color: var(--texto-secundario); }
+.empty { font-size: 12px; color: var(--texto-secundario); line-height: 1.8; margin-top: 28px; }
+#status { border-top: 1px solid var(--borda); margin: 0; padding: 16px 24px; font-size: 12px; line-height: 1.6; color: var(--texto-secundario); }
+#sincronizacao { margin: 0; padding: 0 24px 16px; font-size: 12px; line-height: 1.6; color: var(--texto-secundario); }
+aside { text-align: center; padding: 28px 12px; max-width: 680px; margin: auto; }
+aside h2 { font-size: 15px; font-weight: 600; color: var(--texto); }
+aside p { font-size: 12px; line-height: 1.8; color: var(--texto-secundario); margin-bottom: 0; }
+footer { text-align: center; font-size: 12px; color: var(--texto-secundario); padding: 10px 20px 28px; }
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .day { min-height: 260px; padding: 16px 12px; }
+}
+@media (max-width: 600px) {
+  main { padding: 0 14px; }
+  .cabecalho { padding-top: 28px; }
+  .marca { margin-bottom: 20px; }
+  .logo-igreja { width: 160px; }
+  .intro { padding: 18px 12px 24px; }
+  .intro p { font-size: 13px; }
+  .toolbar { padding: 20px 16px 10px; flex-wrap: wrap; }
+  h2 { font-size: 21px; }
+  nav { width: 100%; justify-content: center; margin-top: 8px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 12px 16px; gap: 8px; }
+  .day { min-height: 230px; padding: 14px 10px; }
+  .note { margin: 10px 16px 20px; }
+  #status { padding: 16px; }
+}
+@media (max-width: 340px) { .grid { grid-template-columns: 1fr; } }
+@media print {
+  body { border-top: 0; background: white; }
+  .cabecalho { padding-top: 0; }
+  .logo-igreja { width: 120px; }
+  nav, aside, footer, .intro, .note { display: none; }
+  .grid { grid-template-columns: repeat(4, 1fr); }
+  .day { break-inside: avoid; }
+}

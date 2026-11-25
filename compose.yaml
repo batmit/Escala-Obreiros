@@ -1,0 +1,24 @@
+services:
+  app:
+    image: escala-obreiros:local
+    build: .
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 60s
+    ports:
+      - "127.0.0.1:8080:8000"
+    volumes:
+      - igreja-data:/var/data
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8000"
+      DATABASE_PATH: /var/data/igreja.sqlite3
+      BACKUP_DIR: /var/data/backups
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  igreja-data:

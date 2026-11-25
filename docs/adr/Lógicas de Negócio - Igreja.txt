@@ -1,0 +1,21 @@
+Lógicas de Negócio - Igreja
+
+Pesos: obreiro(1), diácono(2) e pastor(3)
+
+Nenhum pode ficar 2 vezes numa mesma semana
+
+Evitar de repetir o mesmo em duas semanas seguidas(pode ser flexibilizada)
+
+Grupo 1: Arilson(1), Daniel(1), Mateus Emílio(1), Edimar(1), Maciel(1)
+
+Grupo 2: Hugo(2), Pr Sebastião(3), José Carlos(2), Juninho(1), Deivid(1)
+
+Segunda e quinta: Grupo 1 deve ter o dobro de chance do grupo 2
+
+Terça, sábado: Grupo 2 deve ter o dobro de chance do grupo 1
+
+Domingo: grupo 2
+
+Terça, sábado e domingo precisaremos de duas pessoas: uma para o louvor e uma para palavra
+
+

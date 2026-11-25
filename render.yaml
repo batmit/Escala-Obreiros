@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: escala-obreiros
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    numInstances: 1
+    maxShutdownDelaySeconds: 60
+    autoDeployTrigger: 'off'
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: "10000"
+      - key: DATABASE_URL
+        sync: false
+      - key: GENERATION_MODE
+        value: on-access

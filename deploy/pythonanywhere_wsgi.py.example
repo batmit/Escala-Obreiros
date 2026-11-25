@@ -1,0 +1,17 @@
+"""Copiar para o arquivo WSGI configurado na aba Web do PythonAnywhere."""
+import os
+import sys
+
+# Ajustar USUARIO para o nome da conta. Código e banco ficam em caminhos separados.
+projeto = '/home/USUARIO/Escala-Obreiros'
+if projeto not in sys.path:
+    sys.path.insert(0, projeto)
+
+# Limites aplicados antes de importar as bibliotecas numéricas.
+os.environ.setdefault('OMP_NUM_THREADS', '1')
+os.environ.setdefault('OPENBLAS_NUM_THREADS', '1')
+os.environ.setdefault('MKL_NUM_THREADS', '1')
+
+from backend.hosted_wsgi import criar_wsgi
+
+application = criar_wsgi('/home/USUARIO/dados-igreja/igreja.sqlite3')
